@@ -112,6 +112,11 @@ character `\uXXXX`-escaped. The prefix is the version; incompatible revisions ch
 (`tclk2 `), never the field semantics. Decoding is fail-closed: a known frame type with an
 unknown key, a missing field, or a malformed value is rejected, never coerced.
 
+The `tclk1 ` prefix is only a version discriminator, not proof that the remainder is a valid
+tclk/1 frame. Readers MUST pass the complete line to the tclk/1 decoder and use only records it
+accepts; prefix-matching or reading the self-declared `type` field alone can count another
+dialect or malformed data as a tclk/1 frame.
+
 Common field shapes:
 
 | shape | rule |

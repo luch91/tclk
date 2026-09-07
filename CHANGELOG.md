@@ -6,6 +6,11 @@ All notable changes to this project are documented here. Format follows
 
 ## [Unreleased]
 
+### Documentation
+
+- Clarify that the `tclk1 ` prefix is a version discriminator only; readers must decode the full
+  line before counting or interpreting it as a tclk/1 frame.
+
 ### Fixed
 
 - `tclk_post_frame` now accepts exact decimal-string nonces in addition to safe integer
